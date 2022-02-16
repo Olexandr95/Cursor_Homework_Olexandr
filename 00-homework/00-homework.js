@@ -13,7 +13,7 @@ const changeFrom500 = 500 - sumItems;
 const middlePrice = (sumItems / 3).toFixed(2);
 const discountRandom = Math.round(Math.random()*100);
 const randomPricre = ((fanta * discountRandom)/100).toFixed(2);
-const pureProfit = (((fanta * discountRandom)/100)-(fanta/2)).toFixed(2);
+const pureProfit = (((sumItems * discountRandom)/100)-(sumItems/2)).toFixed(2);
 
 document.write(`<div class"table">Product List:</div><br>`);
 document.write(`<div class"table">Coca-Cola  ${cola}</div><br>`);
