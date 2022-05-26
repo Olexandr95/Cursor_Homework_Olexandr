@@ -7,16 +7,23 @@ function getMaxDigit(num){
     }
     return big
  }
-//onsole.log(getMaxDigit(987));
+//сonsole.log(getMaxDigit(987));
 //№2
 function pow(x, n){
-     let result = x;
-     for (let i=1; i<n;i++){
+     let result = 1;
+     if(x>0){
+     for (let i=0; i<n;i++){
          result*=x;
      }
-     return result;
+    }else if(x<0){
+        for (let i=n; i<0;i++){
+            result*=x;
+        }
+        result=1/result
+    }
+    return result
  }
-//console.log(pow(2,5))
+//console.log(pow(-5,-2));
  //#3 
  function formatName(name){
     return name[0].toUpperCase()+ name.slice(1).toLowerCase()
@@ -34,8 +41,8 @@ function pow(x, n){
 //console.log(getRandomNumber(1,5))
 //№6
  function countLetter(letter, word){
-   let count =1;
-   let arr = word.split('')
+   let count =0;
+   let arr = word.toLowerCase().split('')
    for(let i =0; i<arr.length; i++){
       if(arr[i]===letter){
          count++
@@ -48,6 +55,8 @@ function pow(x, n){
  function convertCurrency(sum, curs = 25){
     let str = sum.toString().toUpperCase();
     let value = parseInt(sum);
+    if(isNaN(parseInt(sum)))
+        return "Введіть число"
     if(str.includes('UAH')){
       return value/curs
     }else if(str.includes('$')){
@@ -56,22 +65,22 @@ function pow(x, n){
       return "Enter current valut 'UAH' or '$'"
     }
  }
-//console.log(convertCurrency("2500UH"))
+//console.log(convertCurrency("2500UAH"))
 //#10
-function getRandomPassword(num){
+function getRandomPassword(num=8){
     let arr = [];
     for(let i =0; i<num; i++){
        arr.push(Math.floor(Math.random()*10))
     }
     return arr.join('')
  }
-//console.log(getRandomPassword(8));
+//console.log(getRandomPassword(5));
 //#11
  function deleteLetters(letter, word){
  let res = [];
- let arr = word.split('')
+ let arr = word.toLowerCase().split('')
  for(let i=0; i<arr.length; i++){
-    if(arr[i]===letter) {
+    if(arr[i]===letter.toLowerCase()) {
  continue 
 } else {
  res.push(arr[i]) 
