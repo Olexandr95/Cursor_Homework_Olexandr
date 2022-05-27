@@ -25,17 +25,18 @@ console.log(pairMarksArr)
 function getTeam(){
    const teamArr = []
    for(let i=0; i<(students.length/2); i++){
-      teamArr.push([`${getBOYS[i]} ${getGIRLS[i]}`]);
+      teamArr.push([`${getBOYS[i]}` , `${getGIRLS[i]}`])
+
    }
    return teamArr
 }
 /*Зіставте пари з попереднього завдання та теми проєктів, 
 над якими студенти будуть працювати. Повинен вийти вкладений масив виду:
- [["Олександр і Олена", "Теорія автоматів"], [...], [...]]*/
+[["Олександр і Олена", "Теорія автоматів"], [...], [...]]*/
 function getTeamAndThemes(){
    const teamAndThemes = [];
    for(let i=0; i<(students.length/2); i++){
-      teamAndThemes.push([`${getBOYS[i]} i ${getGIRLS[i]} , ${themes[i]}`]);
+      teamAndThemes.push([`${getBOYS[i]} i ${getGIRLS[i]}` , `${themes[i]}`]);
    }
    return teamAndThemes
 }
@@ -43,7 +44,7 @@ function getTeamAndThemes(){
 function getStudentsMarks(){
    const studentsMarks = [];
    for(let i = 0; i<students.length; i++){
-      studentsMarks.push([`${students[i]}, ${marks[i]}`])
+      studentsMarks.push([`${students[i]}`, `${marks[i]}`])
    }
    return studentsMarks
 }
@@ -53,7 +54,7 @@ function getStudentsMarks(){
 function getPairMarks(){
    const pairMarks = [];
    for(let i = 0; i<teamsAndThemsArr.length; i++ ){
-      pairMarks.push([`${teamsAndThemsArr[i]}, ${Math.ceil(Math.random()*(5-1)+1)}`])
+      pairMarks.push([...teamsAndThemsArr[i] , `${Math.ceil(Math.random()*(5-1)+1)}`])
    }
    return pairMarks;
 }
