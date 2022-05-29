@@ -1,7 +1,7 @@
 //#1
 function getMaxDigit(num){
     let big = 0;
-    let arr = num.toString().split('');
+    const arr = num.toString().split('');
     for(let i=0; i<arr.length; i++){
        if(arr[i]>big) big = arr[i] 
     }
@@ -11,11 +11,11 @@ function getMaxDigit(num){
 //№2
 function pow(x, n){
      let result = 1;
-     if(x>0){
+     if(n>0){
      for (let i=0; i<n;i++){
          result*=x;
      }
-    }else if(x<0){
+    }else if(n<0){
         for (let i=n; i<0;i++){
             result*=x;
         }
@@ -44,13 +44,13 @@ function pow(x, n){
    let count =0;
    let arr = word.toLowerCase().split('')
    for(let i =0; i<arr.length; i++){
-      if(arr[i]===letter){
+      if(arr[i]===letter.toLowerCase()){
          count++
       }
    }
    return count
  }
-//console.log(countLetter("а", "Авганістан"))
+console.log(countLetter("А", "Авганістан"))
  // #7
  function convertCurrency(sum, curs = 25){
     let str = sum.toString().toUpperCase();
@@ -80,25 +80,22 @@ function getRandomPassword(num=8){
  let res = [];
  let arr = word.toLowerCase().split('')
  for(let i=0; i<arr.length; i++){
-    if(arr[i]===letter.toLowerCase()) {
- continue 
-} else {
- res.push(arr[i]) 
-}
+   if(arr[i]===letter.toLowerCase()) {
+      continue 
+   } else {
+   res.push(arr[i]) 
+   }
  }
  return res.join('')
- }
-console.log(deleteLetters('a', 'blablabla'));
+}
+//console.log(deleteLetters('a', 'blablabla'));
 //#12
 function isPalyndrom(str){
     let arr = deleteLetters(' ', str).toLowerCase()
+    console.log(arr)
     let res = arr.split('').reverse().join('')
-    if(arr===res) {
- return true 
-} else {
- return false; 
+ return arr===res 
 }
- }
 //console.log(isPalyndrom("madam"))
 //№13 
  function deleteDuplicateLetter(text){
