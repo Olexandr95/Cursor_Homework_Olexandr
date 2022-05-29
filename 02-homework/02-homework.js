@@ -3,7 +3,9 @@ function getMaxDigit(num){
     let big = 0;
     const arr = num.toString().split('');
     for(let i=0; i<arr.length; i++){
-       if(arr[i]>big) big = arr[i] 
+       if(arr[i]>big) {
+ big = arr[i] 
+} 
     }
     return big
  }
@@ -50,13 +52,14 @@ function pow(x, n){
    }
    return count
  }
-console.log(countLetter("А", "Авганістан"))
+console.log(countLetter('А', 'Авганістан'))
  // #7
  function convertCurrency(sum, curs = 25){
     let str = sum.toString().toUpperCase();
     let value = parseInt(sum);
-    if(isNaN(parseInt(sum)))
-        return "Введіть число"
+    if(isNaN(parseInt(sum))) {
+ return 'Введіть число' 
+}
     if(str.includes('UAH')){
       return value/curs
     }else if(str.includes('$')){
@@ -99,7 +102,7 @@ function isPalyndrom(str){
 //console.log(isPalyndrom("madam"))
 //№13 
  function deleteDuplicateLetter(text){
-    return text.toLowerCase().split('').filter((item,pos, self) =>self.indexOf(item)===text.lastIndexOf(item)).join('')
+    return text.toLowerCase().split('').filter((item,pos, self) => self.indexOf(item)===text.lastIndexOf(item)).join('')
 }
 //console.log(deleteDuplicateLetter("Бісквіт був дуже ніжним"))
 
