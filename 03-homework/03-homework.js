@@ -36,7 +36,7 @@ function getTeam(){
 function getTeamAndThemes(){
    const teamAndThemes = [];
    for(let i=0; i<(students.length/2); i++){
-      teamAndThemes.push([`${getBOYS[i]} i ${getGIRLS[i]}` , `${themes[i]}`]);
+      teamAndThemes.push([`${teams[i].join(' i ')}` , `${themes[i]}`]);
    }
    return teamAndThemes
 }
