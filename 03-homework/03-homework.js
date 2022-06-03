@@ -26,7 +26,6 @@ function getTeam(){
    const teamArr = []
    for(let i=0; i<(students.length/2); i++){
       teamArr.push([`${getBOYS[i]}` , `${getGIRLS[i]}`])
-
    }
    return teamArr
 }
