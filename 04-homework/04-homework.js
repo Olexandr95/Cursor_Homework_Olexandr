@@ -78,10 +78,25 @@ console.log(`№7 Створіть функцію getDividedByFive(6, 2, 55, 11,
 console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
 /*#8Створіть функцію replaceBadWords(string) – яка 1) розіб'є фразу на слова, 2) замінить погані слова на зірочки (*). При вирішенні цього завдання необхідно розбити масив на слова за допомогою функції .split(" "), після чого масив необхідно буде склеїти .join(" ") Погані слова: shit та fuck. Передбачте можливість розширювати список цих слів у майбутньому.
 Приклад: replaceBadWords("Are you fucking kidding?") -> "Are you ****ing kidding?" Приклад: replaceBadWords("Holy shit!") -> "Holy ****!" Приклад: replaceBadWords("It's bullshit!") -> "It's bull****!"*/
-function replaceBadWords(string){
+/*function replaceBadWords(string){
    let reg = /fuck|shit/gi
    let res = string.replaceAll(reg, '****')
    return res
+}*/
+function replaceBadWords(string){
+   let arr = string.split(' ');
+   const badWords = ['fuck', 'shit'];
+   let res = [];
+   for(let i = 0; i<arr.length; i++){
+      res.push(arr[i])
+      for(let j = 0; j<badWords.length; j++){
+         if(arr[i].includes(badWords[j])){
+            res.pop(arr[i])
+            res.push(arr[i].replaceAll(badWords[j], '****'));
+         }
+      }
+   }
+   return res.join(' ')
 }
 console.log(`№8 Створіть функцію replaceBadWords(string) => ${replaceBadWords("It's bullshit!, fuckerfucker")}`)
 /*#9Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні склади по 3 букви.
