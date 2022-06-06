@@ -4,6 +4,7 @@
 max – максимальне значення цілого числа. 
 Приклад: getRandomArray(15, 1, 100) –> [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2]*/
 function getRandomArray(length,min, max){
+   if(min>max) return "Ввведіть мінімальне меншим за максимальне"
    const randomArr = []
    for(let i = 0; i<length; i++){
    randomArr.push(Math.floor(Math.random()*(max-min)+min));
@@ -16,6 +17,7 @@ console.log(getRandomArray(15, 1, 100))
 НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ 
 Приклад: getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 2*/
 function getModa(...modaArr){
+Number.isInteger(modaArr)
 const moda = {}
 let max = 0
 let count = 0
@@ -37,9 +39,10 @@ console.log(`№2 Створіть функцію getModa(6, 2, 55, 11, 78, 2, 5
 /* #3Створіть функцію getAverage(...numbers) – яка рахує середнє арифметичне всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 Приклад: getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 34.4*/
 function getAverage(...args){
-   let num = args.length
+   Number.isInteger(args)
+   let length = args.length
    let res = args.reduce((a,b) => a+b);
-   return res/num
+   return res/length
 }
 console.log(`№3 Створіть функцію getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) =>`)
 console.log(getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
@@ -49,6 +52,7 @@ console.log(getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
 Приклад: getMedian(1, 2, 3, 4) –> 2.5
 Приклад: getMedian(1, 2, 3, 4, 5) –> 3*/
 function getMedian(...arr){
+   Number.isInteger(arr)
    const sortArr = arr.sort((a,b) => a-b);
    const length = sortArr.length
    if(sortArr.length % 2 ===0){
@@ -72,6 +76,7 @@ console.log(`№6 Створіть функцію countPositiveNumbers(1, -2, 3,
 /*#7Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5
 Приклад: getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) -> [55, 55]*/
 function getDividedByFive(...divFive){
+   if(divFive === 0) return "Введіть число більше 0"
    return divFive.filter((el) => el%5===0)
 }
 console.log(`№7 Створіть функцію getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) =>`);
@@ -108,10 +113,12 @@ return word.match(/.{1,3}/g)
 }*/
 function divideByThree(word){
    const res = [];
-   for(let i = 0; i<word.length; i+=3){
-      res.push(word.substring(i,i +3))
+   const letters = word.toLowerCase().split('').filter((el) => el !== ' ');
+   for(let i = 0; i<letters.length; i+=3){
+      res.push(letters.join('').substring(i,i +3))
    }
    return res;
+   
 }
 console.log(`№9 Створіть функцію divideByThree(word) =>`)
 console.log(divideByThree('Commander'))
@@ -124,8 +131,8 @@ console.log(divideByThree('Commander'))
 Приклад: generateCombinations("ol") -> ["ol", "lo"]*/
 
 function generateCombinations(word) {
-   if (word.length < 2) {
-       return [word];
+   if (word.length <= 2) {
+       return [word[0] + word[1], word[1] + word[0]].filter((el, pos, arr) => arr.indexOf(el) === pos)
    }else if(word.length>=10){
       return 'Введіть не більше 10 символів'
    } else {
@@ -144,8 +151,9 @@ function generateCombinations(word) {
                anagrams.push(newEntry);
            }
        }
-       return anagrams;
+       return  anagrams.filter((el, pos, arr) => arr.indexOf(el) === pos);
    }
 }
 console.log(`№10 Створіть функцію generateCombinations('123') =>`)
-console.log(generateCombinations('qw'));
+console.log(generateCombinations('ff'));
+console.log(generateCombinations('ffffff'));
