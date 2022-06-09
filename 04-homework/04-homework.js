@@ -20,9 +20,9 @@ function getModa(...modaArr){
 const moda = {}
 let max = 0
 let count = 0
-modaArr.filter((el)=>Number.isInteger(el))
-for(let i = 0; i<modaArr.length; i++){
-   const item = modaArr[i];
+const filtredArr = modaArr.filter((el)=>Number.isInteger(el))
+for(let i = 0; i<filtredArr.length; i++){
+   const item = filtredArr[i];
    if(moda[item]) {
  moda[item]++
 } else {
@@ -39,7 +39,7 @@ console.log(`№2 Створіть функцію getModa(6, 2, 55, 11, 78, 2, 5
 /* #3Створіть функцію getAverage(...numbers) – яка рахує середнє арифметичне всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 Приклад: getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 34.4*/
 function getAverage(...args){
-   let length = args.length
+   let length = args.filter((el)=>Number.isInteger(el)).length
    let res = args.filter((el)=>Number.isInteger(el)).reduce((a,b) => a+b);
    return res/length
 }
@@ -74,8 +74,7 @@ console.log(`№6 Створіть функцію countPositiveNumbers(1, -2, 3,
 /*#7Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5
 Приклад: getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) -> [55, 55]*/
 function getDividedByFive(...divFive){
-   if(divFive === 0) return "Введіть число більше 0"
-   return divFive.filter((el) => el%5===0)
+   return divFive.filter((el) => el!==0).filter((el) => el%5===0)
 }
 console.log(`№7 Створіть функцію getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) =>`);
 console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
