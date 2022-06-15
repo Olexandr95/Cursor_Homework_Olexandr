@@ -1,5 +1,5 @@
 const startBnt = document.querySelector('#btn-generate');
-startBnt.addEventListener('click', generateBlocksInterval)
+startBnt.addEventListener('click', generateBlocksInterval, {once:true})
 function createContainer(){
   const container = document.querySelector(".container");
   for(let i=0; i<25; i++){
