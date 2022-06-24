@@ -46,7 +46,7 @@ profit = salary - taxes;*/
 function getMySalary(country){
   setInterval(()=>{
     let salary = Number((Math.floor(Math.random() * (max - min)) + min).toFixed(0));
-    let taxes = Number((this.tax * salary).toFixed(2));
+    let taxes = getMyTaxes.call(this, salary);
     let profit = salary - taxes;
     return console.log(
       {
