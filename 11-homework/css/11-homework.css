@@ -67,7 +67,7 @@ button:hover{
    width: 200px;
    display: block;
    margin: 5px auto 5px;
-   background-image: url(/img/characters/placeholder.jpg);
+   background-image: url(../img/characters/placeholder.jpg);
    background-size: cover;
    background-repeat: no-repeat;
 }
