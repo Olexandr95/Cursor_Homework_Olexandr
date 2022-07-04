@@ -9,33 +9,48 @@ class Student {
   getInfo(){
     return `Студент ${this.course}го курсу ${this.university}, ${this.fullName}`;
   }
+
+
   get marks(){
     if (this.dismissed) return null
   return this.marksArr;
   }
+
+
   set marks(mark){
     if (this.dismissed) return
   return this.marksArr.push(mark)
   }
+
+
   getAverageMark(){
     if (this.dismissed) return null;
     return Number(this.marksArr.reduce((sum,arr)=>sum+arr)/this.marksArr.length.toFixed(1))
   }
+
   dismiss(){
     this.dismissed = true;
   }
+
+
   recover(){
     this.dismissed = false;
   }
+
 }
+
 
 class BudgetStudent extends Student{
   constructor(university, course, fullName, scholarShip){
     super(university, course, fullName)
     this.scholarShip = scholarShip
   }
+
   getScholarShip(){
     setInterval(()=>{
+      if(this.getAverageMark()<4 && this.dismissed){
+        return console.log("Треба було краще вчитись, щоб не відрахували")
+      }
       if(this.getAverageMark()>=4){
         return console.log(`Ви отримали ` + this.scholarShip + ` грн. стипендії`)
       }
@@ -68,4 +83,6 @@ budgetStudent.dismiss();
 console.log('budgetStudent.marks after budgetStudent.dismiss() => ', budgetStudent.marks);
 budgetStudent.recover();
 console.log('budgetStudent.marks after budgetStudent.recover() => ', budgetStudent.marks);
+budgetStudent.getScholarShip()
+budgetStudent.dismiss()
 budgetStudent.getScholarShip()

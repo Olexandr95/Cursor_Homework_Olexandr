@@ -1,0 +1,126 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+body {
+   background-image: url("/img/bg1.jpg");
+   font-family: "Roboto";
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-repeat: repeat-y;
+}
+
+h1 {
+   text-align: center;
+   font-size: 80px;
+   margin-top: 20px;
+   color: white;
+}
+
+select{
+   background-color:rgb(59, 147, 247) ;
+   height: 70px;
+}
+option{
+   color: #fff;
+   height: 40px
+}
+
+p{
+   text-align: center;
+   color:black;
+   font-weight: 600;
+}
+label {
+   font-size: 26px;
+   display: block;
+   text-align: center;
+   color: #fff;
+}
+button {
+   font-size: 36px;
+   font-weight: 600;
+   display: block;
+   margin: 20px auto 0;
+   width: 300px;
+   border-radius: 10px;
+   border: none;
+   height: 70px;
+}
+button:hover{
+   background-color: black;
+   color: #fff;
+}
+
+.character{
+   height: 270px;
+   width: 200px;
+   background-color: #fff;
+   padding: 10px;
+   margin-bottom: 20px;
+   display: flex;
+   flex-direction: column;
+   border-radius: 5px;
+}
+.hero-image{
+   height: 200px;
+   width: 200px;
+   display: block;
+   margin: 5px auto 5px;
+   background-image: url(/img/characters/placeholder.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+.characters-section {
+   position: relative;
+}
+#chapters {
+   margin-top: 20px;
+   display: block;
+   text-align: center;
+   font-size: 20px;
+   font-weight: 600;
+   border-radius: 3px;
+   color: #fff;
+}
+.chapters-container {
+   margin: 25px auto 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   max-width: 300px;
+}
+
+.characters {
+   max-width: 1200px;
+   margin: 25px auto 0;
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+}
+
+.planets {
+   margin: 30px auto 0;
+   display: block;
+   background-color: #fff;
+   width: 400px;
+}
+
+.planet__image-container {
+   padding: 10px;
+}
+
+.planet-image {
+   max-height: 100%;
+   max-width: 100%;
+   display: block;
+   margin: 0 auto;
+}
+.planet-buttons {
+   display: none;
+   justify-content: space-between;
+   width: 400px;
+   margin: 20px auto 0;
+}
+#prev-page{
+   margin-right: 20px;
+}
