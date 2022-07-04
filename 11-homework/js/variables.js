@@ -9,7 +9,6 @@ const planetsButtons = document.querySelector(".planet-buttons");
 const getPlanets = document.querySelector("#get-planets");
 const prevPage = document.querySelector("#prev-page");
 const nextPage = document.querySelector("#next-page");
-let index = 0;
 export {APIFILMS,
    APIPLANETS,
    charactersContainer,
@@ -20,5 +19,4 @@ export {APIFILMS,
 	planetsButtons,
 	getPlanets,
 	prevPage,
-	nextPage,
-	index}
+	nextPage}
