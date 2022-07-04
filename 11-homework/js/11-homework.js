@@ -4,8 +4,7 @@ import { charactersContainer,
 	planetsButtons,
 	getPlanets,
 	prevPage,
-	nextPage,
-	index } from './variables.js'
+	nextPage,} from './variables.js'
 import {createChepter, createPlanet} from './functions.js'
 let index = 0;
 
