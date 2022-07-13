@@ -1,0 +1,146 @@
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/index.scss ***!
+  \**************************************************************************************************************/
+body {
+  background-color: aqua; }
+
+h1 {
+  text-align: center; }
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  width: 300px; }
+  .flex h1 {
+    text-align: center; }
+
+.container-tile {
+  display: flex;
+  width: 250px;
+  flex-wrap: wrap; }
+
+.container-tile:hover {
+  transform: scale(1.2); }
+
+.tile {
+  width: 50px;
+  height: 50px; }
+
+.btn {
+  width: 250px;
+  background-color: skyblue;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 40px;
+  height: 40px;
+  color: white;
+  font-size: 24px; }
+
+.btn:hover {
+  color: skyblue;
+  transform: scale(1.2);
+  background-color: grey; }
+
+.container {
+  margin-top: 100px;
+  margin: 0 auto; }
+
+.active {
+  background-color: rgba(252, 22, 33, 0.7);
+  transform: scale(1.2);
+  border-radius: 5px;
+  color: white; }
+
+.hw-9 {
+  text-align: center; }
+
+.button-container {
+  display: flex;
+  justify-content: space-between; }
+
+.character {
+  height: 270px;
+  width: 200px;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px; }
+
+.hero-image {
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin: 5px auto 5px; }
+
+.characters-section {
+  position: relative; }
+
+#chapters {
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 3px;
+  color: #fff; }
+
+.chapters-container {
+  margin: 25px auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 300px; }
+
+.characters {
+  max-width: 1200px;
+  margin: 25px auto 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); }
+
+.planets {
+  margin: 30px auto 0;
+  display: block;
+  background-color: #fff;
+  width: 400px; }
+
+.planet__image-container {
+  padding: 10px; }
+
+.planet-image {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto; }
+
+.planet-buttons {
+  display: none;
+  justify-content: space-between;
+  width: 400px;
+  margin: 20px auto 0; }
+
+#prev-page {
+  margin-right: 20px;
+  background-color: skyblue;
+  border-radius: 5px; }
+
+#next-page {
+  background-color: skyblue;
+  border-radius: 5px; }
+
+.planets-section {
+  margin-top: 100px; }
+
+#get-planets {
+  width: 250px;
+  background-color: skyblue;
+  border: 0;
+  border-radius: 5px;
+  height: 40px;
+  color: white;
+  font-size: 24px; }
+
+.flex {
+  margin: 0 auto; }
+
